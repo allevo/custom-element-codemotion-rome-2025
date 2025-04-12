@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "ES2024"
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

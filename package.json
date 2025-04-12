@@ -1,0 +1,25 @@
+{
+    "name": "opt-code-input",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.ts",
+    "type": "module",
+    "scripts": {
+      "biome": "biome ci ./src",
+      "biome:fix": "biome check --apply-unsafe src tests",
+      "start": "vite -c vite.config.ts",
+      "serve:static": "serve .",
+      "build": "vite build --emptyOutDir -c vite.config.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+      "@biomejs/biome": "1.5.3",
+      "autoprefixer": "^10.4.2",
+      "serve": "^14.2.3",
+      "typescript": "^5.8.3",
+      "vite": "^6",
+      "vite-plugin-checker": "^0.8"
+    }
+  }

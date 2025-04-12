@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My OTP code input</title>
+        <script type="module" src="./dist/index.js"></script>
+        <style>
+            html {
+                background: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <my-opt-code-input name="digit" number-of-digit="5"></my-opt-code-input>
+            <button type="submit">Submit</button>
+        </form>
+        <pre><code id="result"></code></pre>
+
+        <script>
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const form = event.target
+                const data = Object.fromEntries(new FormData(form))
+                console.log(data);
+
+                const result = document.querySelector('#result');
+                result.textContent = JSON.stringify(data, null, 2);
+
+                return false;
+            });
+
+            const element = document.querySelector('my-opt-code-input');
+            element.addEventListener('fulfilled', () => {
+                console.log('fulfilled');
+                form.requestSubmit();
+            });
+        </script>
+    </body>
+</html>
